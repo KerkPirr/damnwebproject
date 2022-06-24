@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <%- include('head'); %>
+</head>
+<body>
+<div id="wrapper">
+    <header>
+        <%- include('header');%>
+    </header>
+
+    <%for (let i = 0; i < length; i += 1) {%>
+    <div class = "container">
+        <div class="article">
+            <h2 class="article-header"><%=posts[i].article%></h2>
+            <div class="article-autor"><%=posts[i].autor%></div>
+            <li class="article-post-time"><%=posts[i].date%></li>
+            <p class="article-text"><%=posts[i].disc%></p>
+        </div>
+
+    </div>
+    <%}%>
+
+    <footer>
+        <% -include('footer');%>
+    </footer>
+</div>
+</body>

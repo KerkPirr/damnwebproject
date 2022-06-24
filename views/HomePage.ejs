@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <%- include('head')%>>
+</head>
+
+<body>
+
+
+
+<div class = "wrapper">
+    <header>
+
+        <div class="menu_and_name">
+
+                <ul class = "menu_main">
+
+                    <li class="menu_cell"><a href="/" class="menu_cell_href">Home</a></li>
+                    <li class="menu_cell"><a href="#1" class="menu_cell_href">Разделы</a></li>
+                    <li class="menu_cell"><a href="#2" class="menu_cell_href">News it</a></li>
+                    <li class="menu_cell"><a href="#3" class="menu_cell_href">About Us</a></li>
+
+                        <form class = "search_and_buttonSearch">
+                                <input class="search" type="text" name="text" placeholder="">
+                                <input class="buttonSearch" type="submit" name="submit" value="Search">
+                        </form>
+
+                </ul>
+        </div>
+
+        <div class = "mainName">`
+            Name </div>
+
+    </header>
+
+
+
+<main>
+    <div class = "main_question">
+        <div class = "question">
+
+            <img class = "main_question_user_avatar"
+                 src="/images/UserAvatars/MeW4lmy6XAYUfxfbiBogriqYgwasMGf3Wzqn42FSKxrmJXrPZVW8Q2v6oI1c38NqxSyg9_EhpCQjpBVHaD7QdMwb.jpg">
+
+            <div class = "data">22 February 2021 at 19:32
+                <span class = "nik">Dev1lCry</span></div>
+
+        </div>
+
+
+
+        <h1 class = "main_question_h1"><strong>Генератор уникальных комбинаций</strong></h1>
+
+        <p class = "text_question">В общем появилась задача сделать програмку в которой из группы строк(слов/словосочетаний)
+            нужно сгенерировать список уникальных строк в котором элементы не повторяются.
+            К примеру есть группа слов: s1,s2,s3,s4,s5,s6 из которых нужно сделать строку из 4 элементов:
+            1. s1 s2 s3 s4
+            2. s1 s2 s3 s5
+            3. s1 s2 s3 s6
+            4. s1 s2 s4 s5
+            5. s1 s2 s4 s6
+            6. s1 s2 s5 s6
+            И т.п…
+            Вот так как-то
+            Какие у вас есть предложения?
+            P.s. По условию не может быть вот такого : s1 s2 s3 s1
+            Помогите, пожалуйста (
+        </p>
+
+        <img src="/images/ImagesUserComments/pZOuBw0AApDK8PMi5JYMgBx5lbDbiF3SF2uSUMbpvv4L5UjZl8t7q2PzoodQw7ijGRSa0ZLzRqStj8cy91ivA1ku.jpg"
+             class = "image_of_question">
+
+    </div>
+</main>
+
+
+
+
+
+<footer>
+    <%- include('footer') -%>
+</footer>
+</div>
+
+</body>
+</html>
