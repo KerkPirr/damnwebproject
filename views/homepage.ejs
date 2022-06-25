@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<head xmlns="http://www.w3.org/1999/html">
+<head>
     <%- include('head'); %>
 </head>
 <body>
-<div class = "wrapper">
-<header>
-    <%- include('header'); %>
-</header>
+<div class="wrapper">
+    <header>
+        <%- include('header'); %>
+    </header>
 
     <% for (var i = 0; i < posts.length; i += 1) { %>
         <div class="container">
@@ -14,13 +14,16 @@
                 <h2 class="article-header"><%= posts[i].post_name %></h2>
                 <div class="article-autor"><%= posts[i].post_author %></div>
                 <li class="article-post-time"><%= posts[i].publication_date %></li>
+                <% if (posts[i].post_pict !== undefined){ %>
+                    <img src="<%= posts[i].post_pict %>">
+                <% } %>
                 <p class="article-text"><%= posts[i].post_content %></p>
             </div>
         </div>
     <% } %>
 
-<footer>
-    <%-  include('footer'); %>
-</footer>
+    <footer>
+        <%- include('footer'); %>
+    </footer>
 </div>
 </body>

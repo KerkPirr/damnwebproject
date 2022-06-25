@@ -27,7 +27,6 @@ router.get('/',(req,res)=>{
         });
     })
 })
-
 router.get('/test', (req, res) => {
   res.render('profile', {
       Nickname : "denis"
