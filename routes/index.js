@@ -3,7 +3,7 @@ const Console = require("console");
 var router = express.Router();
 
 
-const {client, getPost, getComments, getPosts, addComment , checkLogin, addLogin} = require("../database");
+const {client, getPost, getComments, getPosts, addComment , checkLogin, addLogin, getUser} = require("../database");
 
 function isEmptyObject(obj) {
     for (var i in obj) {
@@ -55,11 +55,13 @@ router.get('/login', (req, res) => {
     res.render('login');
 })
 
-router.get('/profile', (req, res) => {
+router.get('/profile', async (req, res) => {
     let login = req.cookies['login'];
+    let user = await getUser(login);
     if (login !== undefined){
         res.render('profile', {
-            Nickname: login
+            Nickname: login,
+            user : user,
         })
     } else {
         res.redirect("/login");

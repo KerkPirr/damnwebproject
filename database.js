@@ -36,13 +36,14 @@ const getComments = async (post_id) =>{
     })
     return result;
 }
-// const getPicture = async () => {
-//     const query = `SELECT user_picture, login FROM users WHERE user_comments @> '{${post_id}}'`;
-//     let result = await client.query(query).then(res =>{
-//         return res.rows;
-//     })
-//     return result;
-// }
+const getUser = async (nickname)=>{
+    const query = 'select * from users where login = ' + `'${nickname}'`;
+    let result = await client.query(query).then(res=>{
+        return res.rows[0];
+    })
+    return result;
+}
+
 
 
 function addComment(post, comment) {
@@ -85,4 +86,4 @@ const addLogin = async (login, password) => {
 // const getTag = async (tag)=>{
 //     const querry =
 
-module.exports = {client, getPost, getComments, getPosts, addComment, checkLogin, addLogin}
+module.exports = {client, getPost, getComments, getPosts, addComment, checkLogin, addLogin,getUser}

@@ -15,10 +15,10 @@
         <div class = "all_content">
             <div id = "avatars_nickname" class="wrapper_main">
                 <div class="user_avatar">
-                    <img src="../img/qDQxSNfaHao.jpg" >
+                    <img src="<%= user.user_picture %>" >
                 </div>
                 <div class = "nickname">
-                    <p><%= Nickname %></p>
+                    <p><%= user.login %></p>
                 </div>
                 <form class = "container_button_search">
                     <input class="buttonSearch_profile" type="submit" name="submit" value="Change Nickname">
@@ -26,8 +26,8 @@
                 </form>
             </div>
             <div id = "posts_and_comments" class="wrapper_main">
-                <div class = "content">Fuck you1</div>
-                <div class = "content"> Fuck you2</div>
+                <div class = "content"><%=user.user_posts%></div>
+                <div class = "content"> <%= user.user_comments%></div>
             </div>
         </div>
     </main>
