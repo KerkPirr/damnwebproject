@@ -14,9 +14,11 @@ function isEmptyObject(obj) {
     return true;
 }
 
-router.get('/',(req,res)=>{
-    getPosts().then( async (p) => {
+router.get('/',async (req,res)=>{
+    let login = req.body['login'];
+    let user = await getUser(login);
 
+    getPosts().then( async (p) => {
         if (isEmptyObject(p)){
             console.log("Not found page in table " + index_page + " " + p);
             res.sendFile( __dirname +"\\404.html");
