@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <%- include('head'); %>
+    <link rel="stylesheet" type="text/css" href="stylesheets/profile.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <header>
+        <%- include('header'); %>
+    </header>
+
+    <form class="center" name="comment" action="" method="post">
+
+        <div class="reg-container">
+            <p class="comment_form_field">Post name</p>
+            <input required type="text" name="create1" placeholder="" maxlength="10" class="form_reg">
+        </div>
+
+        <div class="reg-container">
+            <p class="comment_form_field">Text</p>
+            <input required type="text" name="create2" placeholder="" maxlength="10" class="form_reg">
+        </div>
+    </form>
+
+</div>
+</body>

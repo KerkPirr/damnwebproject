@@ -24,9 +24,10 @@
                 <div class = "nickname">
                     <p><%= user.login %></p>
                 </div>
-                <form class = "container_button_search">
+                <form class = "container_button_search"  name="comment" action="" method="post">
                     <input class="buttonSearch_profile" type="submit" name="submit" value="Change Nickname">
                     <input class="buttonSearch_profile" type="submit" name="submit" value="Change Avatar">
+                    <input class="buttonSearch_profile" id = "create_posts" type="submit" name="submit" value="Create Post">
                 </form>
             </div>
             <div id = "posts_and_comments" class="wrapper_main2">
