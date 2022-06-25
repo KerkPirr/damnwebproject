@@ -10,7 +10,12 @@
             <input class="search" type="text" name="text" placeholder="">
             <input class="buttonSearch" type="submit" name="submit" value="Search">
         </form>
-        <input class="buttonSearch" id = "button_profile" type="image" src = "../img/pngwing.com.png">
+        <input class="buttonSearch" id = "button_profile" type="image" src = "../img/pngwing.com.png"><script>
+            let button = document.getElementById("button_profile");
+            button.addEventListener('click', () => {
+                document.location.href = "/profile";
+            });
+        </script>
     </ul>
 </div>
 <div class = "mainName">ReBlog </div>
