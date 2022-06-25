@@ -89,5 +89,9 @@ router.post('/login', async(req, res) => {
     }
 })
 
+router.get('/sections', (req, res) => {
+    res.render('section');
+})
+
 
 module.exports = router;
