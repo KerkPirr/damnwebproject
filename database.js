@@ -19,6 +19,20 @@ const getPosts = async () =>{
     });
     return result;
 }
+const getPostsByUser = async (nickname)=>{
+    const query = 'select * from posts where post_author = ' + `'`+nickname+`'`
+    let result = await client.query(query).then(res =>{
+        return res.rows
+    })
+    return result;
+}
+const getCommentsByUser = async (nickname)=>{
+    const query = 'select * from comments where author = ' + `'${nickname}'`
+    let result = await client.query(query).then(res =>{
+        return res.rows
+    })
+    return result;
+}
 
 const getPost = async (id) => {
     const query = 'SELECT * FROM posts WHERE post_id = ' + id;
@@ -36,6 +50,7 @@ const getPostsByText = async (text) => {
     })
     return result;
 }
+
 
 const getComments = async (post_id) =>{
     const query = 'SELECT * FROM comments WHERE post_id = ' + post_id;
@@ -91,4 +106,4 @@ const addLogin = async (login, password) => {
         return true;
     }
 }
-module.exports = {client, getPost, getComments, getPosts, addComment, checkLogin, addLogin,getUser, getPostsByText}
+module.exports = {client, getPost, getComments, getPosts, addComment, checkLogin, addLogin,getUser, getPostsByText, getPostsByUser,getCommentsByUser}
