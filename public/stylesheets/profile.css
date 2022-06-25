@@ -10,8 +10,17 @@ body {
 
 .all_content {
     height: 520px;
-
 }
+
+a {
+    text-decoration: none;
+    color: #afafaf;
+}
+
+a:hover {
+    color: #d7d7d7;
+}
+
 h3 {
     color : #39a2e9;
     font-family: Chakra_Bold;
@@ -128,5 +137,11 @@ h4 {
     margin-top: 10px;
     width: 249px;
 }
+
+.content {
+    overflow: auto;
+}
+
+
 
 
