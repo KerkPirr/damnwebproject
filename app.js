@@ -6,8 +6,10 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const bodyParser = require("express");
 
 const app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

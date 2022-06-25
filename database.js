@@ -45,9 +45,9 @@ const getUser = async (nickname)=>{
     return result;
 }
 
-function addComment(post, comment) {
+function addComment(user, post, comment, date) {
     const query = `INSERT INTO comments ("author", "cmnt_date", "cmnt_txt", "post_id") ` +
-        `VALUES ('` + comment.author + `','` + comment.date + `','` + `','` + comment.comment_text + `',` + post + `)`;
+        `VALUES ('` + user + `','` + date + `','` + `','` + comment.text + `',` + post + `)`;
     client.query(query, (err, res) => {
         if (err) {
             console.error(err);
@@ -84,14 +84,6 @@ const addLogin = async (login, password) => {
         });
         return true;
     }
-}
-
-const searchPostByText = async (text) => {
-    const query = `select * from posts where post_content like '%` + text + `%'`;
-    let result = await client.query(query).then(res =>{
-        return res.rows;
-    })
-    return result;
 }
 
 // const getTag = async (tag)=>{

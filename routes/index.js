@@ -12,6 +12,7 @@ function isEmptyObject(obj) {
         }
     }
     return true;
+
 }
 
 router.get('/',async (req,res)=>{
@@ -54,6 +55,12 @@ router.get("/article/:index_page", async (req, res) => {
         posts: post,
         comments: comments,
     });
+})
+router.post("/article/:index_page", (req,res)=>{
+    let comment = req.body;
+    let date = new Date();
+    addComment(req.body['login'],date, req.params.index_page, comment);
+
 })
 
 router.get('/registration', (req, res) => {
