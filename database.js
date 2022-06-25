@@ -50,5 +50,7 @@ function addComment(post, comment){
         console.log('Data insert successful');
     });
 }
+// const getTag = async (tag)=>{
+//     const querry =
 
 module.exports = { client, getPost, getComments, getPosts, addComment}
