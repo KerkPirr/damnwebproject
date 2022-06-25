@@ -27,18 +27,13 @@ router.get('/',(req,res)=>{
         });
     })
 })
-router.get('/test', (req, res) => {
-  res.render('registration', {
-      Nickname : "denis"
-  })
-})
 
 router.get('/registration', (req, res) => {
     res.render('registration');
 })
 
 router.get('/login', (req, res) => {
-    res.render('entrance');
+    res.render('login');
 })
 
 router.get('/profile', (req, res) => {
