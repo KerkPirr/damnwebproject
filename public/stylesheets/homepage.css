@@ -1,0 +1,10 @@
+body {
+    background: linear-gradient(to right, #183648, #1b2d43);
+}
+
+.wrapper {
+    width: min(900px, 100%);
+    margin: 0 auto;
+    padding: 0 10px;
+}
+

@@ -29,8 +29,8 @@ router.get('/',(req,res)=>{
 })
 
 router.get('/test', (req, res) => {
-  res.render('article', {
-      posts: {}
+  res.render('profile', {
+      Nickname : "denis"
   })
 })
 

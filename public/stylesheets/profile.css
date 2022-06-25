@@ -1,0 +1,81 @@
+h3 {
+    color : #d7d7d7;
+    font-family: Chakra_Bold;
+    font-size: 25px;
+    margin: 10px 0 10px 0;
+}
+
+.content {
+    width: 500px;
+    height: 100px;
+}
+.wrapper_main {
+    position: relative;
+
+}
+
+.all_content{
+    align-content: center;
+}
+
+#posts_and_comments {
+
+    position: absolute;
+    top: 50%;
+    margin: -216px 0 0 300px;
+}
+
+.content {
+    background:linear-gradient(to right, #1e2229, #323945);
+    height: 375px;
+    width: 290px;
+    color: #d7d7d7;
+    font-family: Chakra_Bold;
+    overflow: auto;
+    border: 2px solid #102034;
+
+}
+
+#avatars_nickname {
+
+    height: 400px;
+    width: 250px;
+
+
+
+
+}
+
+.user_avatar {
+    width: 250px;
+    aspect-ratio: 3/4;
+    margin-bottom: 5px;
+
+}
+.user_avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+    border: 2px solid #102034;
+}
+
+.nickname {
+    margin-top: 10px;
+    border: 2px solid #102034;
+    width: 250px;
+    height: 25px;
+    background:linear-gradient(to right, #1e2229, #323945);
+    text-align: center;
+
+}
+
+.nickname p {
+    color: #d7d7d7;
+    font-family: Chakra_Bold;
+    font-size: 15px;
+    margin: 0 0 0 0;
+
+}
+
+
