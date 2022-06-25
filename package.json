@@ -14,6 +14,7 @@
     "morgan": "~1.9.1",
     "pg": "^8.7.3",
     "pg-format": "^1.0.4",
-    "postgre": "^0.1.8"
+    "postgre": "^0.1.8",
+    "querystring": "^0.2.1"
   }
 }

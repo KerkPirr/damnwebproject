@@ -1,6 +1,7 @@
 var express = require('express');
 const Console = require("console");
 var router = express.Router();
+const url = require('url');
 
 const {client, getPost, getComments, getPosts, addComment , checkLogin, addLogin, getUser} = require("../database");
 
@@ -17,16 +18,22 @@ router.get('/',async (req,res)=>{
     let login = req.body['login'];
     let user = await getUser(login);
 
-    getPosts().then( async (p) => {
-        if (isEmptyObject(p)){
-            console.log("Not found page in table " + index_page + " " + p);
-            res.sendFile( __dirname +"\\404.html");
-            return;
-        }
-        res.render('homepage', {
-            posts:p,
-        });
-    })
+    let text = '';
+    const queryObject = url.parse(req.url, true).query;
+
+    if(queryObject.text){
+        text = queryObject.text;
+    }
+        getPosts().then( async (p) => {
+            if (isEmptyObject(p)){
+                console.log("Not found page in table " + index_page + " " + p);
+                res.sendFile( __dirname +"\\404.html");
+                return;
+            }
+            res.render('homepage', {
+                posts:p,
+            });
+        })
 })
 
 router.get("/article/:index_page", async (req, res) => {
@@ -74,7 +81,7 @@ router.post('/login', async(req, res) => {
     let login = req.body['login'];
     let password = req.body['password'];
 
-    let flag = await checkLogin(login, password);
+    let flag = await checkLogin(login, password, true);
 
     if (flag){
         res.cookie('login', login);
@@ -88,7 +95,7 @@ router.post('/registration', async(req, res) => {
     let login = req.body['login'];
     let password = req.body['password'];
 
-    let flag = await addLogin(login, password);
+    let flag = await addLogin(login, password, false);
 
     if (flag){
         res.cookie('login', login);
@@ -109,11 +116,6 @@ router.get('/sections', (req, res) => {
             posts:p,
         });
     })
-})
-
-router.post('/', (req, res) =>{
-    let text = req.body['text'];
-    let a = 10;
 })
 
 

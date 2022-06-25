@@ -36,6 +36,7 @@ const getComments = async (post_id) =>{
     })
     return result;
 }
+
 const getUser = async (nickname)=>{
     const query = 'select * from users where login = ' + `'${nickname}'`;
     let result = await client.query(query).then(res=>{
@@ -43,8 +44,6 @@ const getUser = async (nickname)=>{
     })
     return result;
 }
-
-
 
 function addComment(post, comment) {
     const query = `INSERT INTO comments ("author", "cmnt_date", "cmnt_txt", "post_id") ` +
@@ -58,8 +57,12 @@ function addComment(post, comment) {
     });
 }
 
-const checkLogin = async (login, password) => {
-    const query = `select exists(select * from users where login = '` + login + `' and password = '` + password + `')`;
+const checkLogin = async (login, password, flag) => {
+    let asdf = ``;
+    if (flag){
+        asdf = `' and password = '` + password;
+    }
+    const query = `select exists(select * from users where login = '` + login + asdf + `')`;
     let result = await client.query(query).then(res => {
         return res.rows;
     })
@@ -67,7 +70,7 @@ const checkLogin = async (login, password) => {
 }
 
 const addLogin = async (login, password) => {
-    if (await checkLogin(login, password)){
+    if (await checkLogin(login, password, false)){
         return false;
     } else {
         //TODO сделать проверку на корректность пароля и логина
