@@ -93,13 +93,13 @@ router.post('/registration', async(req, res) => {
     let login = req.body['login'];
     let password = req.body['password'];
 
-    let flag = await checkLogin(login, password);
+    let flag = await addLogin(login, password);
 
     if (flag){
         res.cookie('login', login);
         res.redirect("/profile");
     } else {
-        res.render('login');
+        res.render('registration');
     }
 })
 
