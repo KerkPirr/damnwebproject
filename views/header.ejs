@@ -1,7 +1,3 @@
-<head>
-    <%- include('head'); %>
-
-</head>
 <div class="menu_and_name">
 
     <ul class="menu_main">
@@ -13,13 +9,6 @@
         <form class="search_and_buttonSearch">
             <input class="search" type="text" name="text" placeholder="">
             <input class="buttonSearch" id="button_search" type="submit" name="submit" value="Search">
-            <script>
-                let btn_search = document.getElementById("button_search");
-                console.log(btn_search);
-                btn_search.addEventListener('click', () => {
-                    document.location.href = "";
-                });
-            </script>
         </form>
         <input class="buttonSearch" id="button_profile" type="image" src="../img/pngwing.com.png">
         <script>
