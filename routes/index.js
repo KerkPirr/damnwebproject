@@ -33,6 +33,14 @@ router.get('/test', (req, res) => {
   })
 })
 
+router.get('/registration', (req, res) => {
+    res.render('registration');
+})
+
+router.get('/login', (req, res) => {
+    res.render('entrance');
+})
+
 router.get('/profile', (req, res) => {
     let login = req.cookies['login'];
     if (login !== undefined){
@@ -40,16 +48,9 @@ router.get('/profile', (req, res) => {
             Nickname: login
         })
     } else {
-        document.location.href = "registration";
+        res.redirect("/registration");
     }
 })
 
-router.get('/registartion', (req, res) => {
-    res.render('registration');
-})
-
-router.get('/login', (req, res) => {
-    res.render('entrance');
-})
 
 module.exports = router;
