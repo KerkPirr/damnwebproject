@@ -1,0 +1,60 @@
+<head>
+    <%- include('head'); %>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/homepage.css">
+
+</head>
+
+<body>
+<div class="wrapper">
+    <header>
+        <%- include('header'); %>
+    </header>
+    <h2>Sections</h2>
+    <div class = "categories">
+        <form class = "categories_filters_form">
+            <input id = "cat1" type="checkbox">
+            <label for="cat1">First categories</label>
+        </form>
+        <form class = "categories_filters_form">
+            <input id = "cat2" type="checkbox">
+            <label for="cat2">Second categories</label>
+        </form>
+        <form class = "categories_filters_form">
+            <input id = "cat2" type="checkbox">
+            <label for="cat2">Third categories</label>
+        </form >
+        <form class = "categories_filters_form">
+            <input id = "cat3" type="checkbox">
+            <label for="cat3">Fours categories</label>
+        </form>
+    </div>
+
+    <div class="filters">
+        <form class = "categories_filters_form">
+            <input id = "teg1" type="checkbox">
+            <label for="teg1">First categories</label>
+        </form>
+        <form class = "categories_filters_form">
+            <input id = "teg2" type="checkbox">
+            <label for="teg1">Second categories</label>
+        </form>
+        <form class = "categories_filters_form">
+            <input id = "teg3" type="checkbox">
+            <label for="teg3">Third categories</label>
+        </form >
+        <form class = "categories_filters_form">
+            <input id = "teg4" type="checkbox">
+            <label for="teg4">Fours categories</label>
+        </form>
+    </div>
+
+    <form class = "section" name="comment" action="" method="post">
+    <input class="section_search" id = "button_reg" type="submit" name="submit" value="Confirm">
+    </form>
+
+    <footer>
+        <%- include('footer'); %>
+    </footer>
+</div>
+</body>
+
