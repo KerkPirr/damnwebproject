@@ -15,7 +15,11 @@
         <div class = "all_content">
             <div id = "avatars_nickname" class="wrapper_main">
                 <div class="user_avatar">
-                    <img src="<%= user.user_picture %>" >
+                    <%if(user.user_picture !== null){%>
+                    <img src="<%= user.user_picture %>">
+                    <%}else{%>
+                    <img src="https://www.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png">
+                    <%}%>
                 </div>
                 <div class = "nickname">
                     <p><%= user.login %></p>
