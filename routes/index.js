@@ -3,7 +3,7 @@ const Console = require("console");
 var router = express.Router();
 
 
-const {client, getPost, getComments, getPosts, addComment } = require("../database");
+const {client, getPost, getComments, getPosts, addComment , checkLogin} = require("../database");
 
 function isEmptyObject(obj) {
     for (var i in obj) {
@@ -77,7 +77,21 @@ router.get('/profile', (req, res) => {
             Nickname: login
         })
     } else {
-        res.redirect("/registration");
+        res.redirect("/login");
+    }
+})
+
+router.post('/login', async(req, res) => {
+    let login = req.body['login'];
+    let password = req.body['password'];
+
+    let flag = await checkLogin(login, password);
+
+    if (flag){
+        res.cookie('login', login);
+        res.redirect("/profile");
+    } else {
+        res.render('login');
     }
 })
 
