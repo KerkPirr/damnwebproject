@@ -31,10 +31,14 @@
             </div>
             <div id = "posts_and_comments" class="wrapper_main2">
                 <div class = "content" id = "content1"><h4>My posts</h4>
-                    <%=user.user_posts%>
+                    <% for (let i = 0; i < posts.length; i += 1){ %>
+                    <a href = "/article/<%= posts[i].post_id %>" class="article-header"><%= posts[i].post_name %></a>
+                    <% } %>
                 </div>
                 <div class = "content"> <h4>My comments</h4>
-                    <%= user.user_comments%>
+                    <% for (let i = 0; i < comments.length; i += 1){ %>
+                    <a href = "/article/<%= comments[i].post_id %>" class="article-header"><%= comments[i].cmnt_txt %></a>
+                    <% } %>
                 </div>
             </div>
         </div>

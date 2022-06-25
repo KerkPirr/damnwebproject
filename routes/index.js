@@ -93,6 +93,8 @@ router.get('/profile', async (req, res) => {
         res.render('profile', {
             Nickname: login,
             user : user,
+            posts: {},
+            comments: {}
         })
     } else {
         res.redirect("/login");
