@@ -53,10 +53,9 @@ const getUser = async (nickname)=>{
     return result;
 }
 
-function addComment(user, post, comment, date) {
-    const query = `INSERT INTO comments ("author", "cmnt_date", "cmnt_txt", "post_id") ` +
-        `VALUES ('` + user + `','` + date + `','` + `','` + comment.text + `',` + post + `)`;
-    client.query(query, (err, res) => {
+const addComment = async (user, date, comment, post) => {
+    let values = [[user, date, comment, post,]];
+    await client.query(format('INSERT INTO comments (author,cmnt_date, cmnt_txt, post_id) VALUES %L', values), [], (err, res) => {
         if (err) {
             console.error(err);
             return;
@@ -81,7 +80,6 @@ const addLogin = async (login, password) => {
     if (await checkLogin(login, password, false)){
         return false;
     } else {
-        //TODO сделать проверку на корректность пароля и логина
         let date = new Date();
         let values = [[login, password, date]];
         await client.query(format('INSERT INTO users (login, password, reg_date) VALUES %L', values),[], (err, res) => {
@@ -93,8 +91,4 @@ const addLogin = async (login, password) => {
         return true;
     }
 }
-
-// const getTag = async (tag)=>{
-//     const querry =
-
 module.exports = {client, getPost, getComments, getPosts, addComment, checkLogin, addLogin,getUser, getPostsByText}

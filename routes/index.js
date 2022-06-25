@@ -61,6 +61,22 @@ router.get("/article/:index_page", async (req, res) => {
         comments: comments,
     });
 })
+router.post("/article/:index_page", async (req,res)=>{
+    let comment = req.body['comment-text'];
+    let user = req.cookies['login']
+    let post_id = req.params.index_page;
+    let date = new Date();
+
+    let flag = addComment(user, date, comment, post_id, false);
+    let post = await getPost(post_id);
+    let comments = await getComments(post_id);
+    console.log(comments)
+    res.render('article',{
+        posts : post,
+        comments: comments,
+    })
+
+})
 
 router.get('/registration', (req, res) => {
     res.render('registration');
