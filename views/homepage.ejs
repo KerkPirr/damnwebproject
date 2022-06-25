@@ -3,11 +3,10 @@
     <%- include('head'); %>
 </head>
 <body>
+<header>
+    <%- include('header'); %>
+</header>
 <div id="wrapper">
-    <header>
-        <%- include('header'); %>
-    </header>
-
     <% for (let i = 0; i < posts.length; i += 1) { %>
         <div class="container">
             <div class="article">
@@ -23,9 +22,8 @@
             </div>
         </div>
     <% } %>
-
-    <footer>
-        <% -include('footer'); %>
-    </footer>
 </div>
+<footer>
+    <% -include('footer'); %>
+</footer>
 </body>
