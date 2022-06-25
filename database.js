@@ -29,6 +29,14 @@ const getPost = async (id) => {
     return result;
 }
 
+const getPostsByText = async (text) => {
+    const query = `select * from posts where post_content like` + `'%` + text + `%'`;
+    let result = await client.query(query).then(res =>{
+        return res.rows;
+    })
+    return result;
+}
+
 const getComments = async (post_id) =>{
     const query = 'SELECT * FROM comments WHERE post_id = ' + post_id;
     let result = await client.query(query).then(res =>{
@@ -89,4 +97,4 @@ const addLogin = async (login, password) => {
 // const getTag = async (tag)=>{
 //     const querry =
 
-module.exports = {client, getPost, getComments, getPosts, addComment, checkLogin, addLogin,getUser}
+module.exports = {client, getPost, getComments, getPosts, addComment, checkLogin, addLogin,getUser, getPostsByText}

@@ -3,7 +3,7 @@ const Console = require("console");
 var router = express.Router();
 const url = require('url');
 
-const {client, getPost, getComments, getPosts, addComment , checkLogin, addLogin, getUser} = require("../database");
+const {client, getPost, getComments, getPosts, addComment , checkLogin, addLogin, getUser, getPostsByText} = require("../database");
 
 function isEmptyObject(obj) {
     for (var i in obj) {
@@ -24,17 +24,26 @@ router.get('/',async (req,res)=>{
 
     if(queryObject.text){
         text = queryObject.text;
-    }
-        getPosts().then( async (p) => {
-            if (isEmptyObject(p)){
+        let posts = await getPostsByText(text);
+        if (isEmptyObject(posts)) {
+            res.sendFile(__dirname + "\\404.html");
+            return;
+        }
+        res.render('homepage', {
+            posts: posts
+        })
+    } else {
+        getPosts().then(async (p) => {
+            if (isEmptyObject(p)) {
                 console.log("Not found page in table " + index_page + " " + p);
-                res.sendFile( __dirname +"\\404.html");
+                res.sendFile(__dirname + "\\404.html");
                 return;
             }
             res.render('homepage', {
-                posts:p,
+                posts: p,
             });
         })
+    }
 })
 
 router.get("/article/:index_page", async (req, res) => {
@@ -55,15 +64,6 @@ router.get("/article/:index_page", async (req, res) => {
         posts: post,
         comments: comments,
     });
-})
-router.post("/article/:index_page", (req,res)=>{
-    let user = req.cookies['login'];
-    let date = new Date();
-    let comment = req.body['comment-text'];
-    let post = req.params.index_page;
-
-    addComment(user, post, comment, date);
-
 })
 
 router.get('/registration', (req, res) => {
