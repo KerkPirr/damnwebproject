@@ -8,3 +8,27 @@ body {
     padding: 0 10px;
 }
 
+h2 {
+    color: #d7d7d7;
+    font-family: Chakra_Bold;
+}
+
+.img_comment img {
+    width: 200px;
+    height: 230px;
+    border: 2px solid #102034;
+    object-fit: cover;
+}
+.article {
+    background:linear-gradient(to right, #1e2229, #323945);
+    border: 2px solid #102034;
+    margin: 10px auto auto 10px;
+    width: 95%;
+
+}
+
+.article-header {
+
+}
+
+

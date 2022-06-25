@@ -50,7 +50,7 @@ h3 {
 
 .user_avatar {
     width: 250px;
-    aspect-ratio: 3/4;
+    object-fit: cover;
     margin-bottom: 5px;
 
 }

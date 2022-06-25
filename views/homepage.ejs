@@ -8,15 +8,19 @@
         <%- include('header'); %>
     </header>
 
+    <h2> All posts </h2>
+
     <% for (var i = 0; i < posts.length; i += 1) { %>
         <div class="container">
             <div class="article">
-                <h2 class="article-header"><%= posts[i].post_name %></h2>
+                <h3 class="article-header"><%= posts[i].post_name %></h3>
                 <div class="article-autor"><%= posts[i].post_author %></div>
-                <li class="article-post-time"><%= posts[i].pub_date %></li>
+                <li class="article-post-time"><%= posts[i].pub_date.toLocaleDateString('en-GB').replaceAll('/','.') %></li>
+                <div class = "img_comment">
                 <% if (posts[i].post_pict !== undefined){ %>
                     <img src="<%= posts[i].post_pict %>">
                 <% } %>
+                </div>
                 <p class="article-text"><%= posts[i].post_content %></p>
             </div>
         </div>
