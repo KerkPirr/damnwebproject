@@ -39,6 +39,12 @@ h2 {
     font-family: Chakra_Bold;
     margin-left: 10px;
     margin-top: 5px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.article-header:hover {
+    color: #d7d7d7;
 }
 
 .article-autor {
