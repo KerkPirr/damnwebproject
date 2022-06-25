@@ -13,7 +13,7 @@
     <main>
         <h3>Profile</h3>
         <div class = "all_content">
-            <div id = "avatars_nickname" class="wrapper_main">
+            <div id = "avatars_nickname" class="wrapper_main1">
                 <div class="user_avatar">
                     <%if(user.user_picture !== null){%>
                     <img src="<%= user.user_picture %>">
@@ -29,9 +29,9 @@
                     <input class="buttonSearch_profile" type="submit" name="submit" value="Change Avatar">
                 </form>
             </div>
-            <div id = "posts_and_comments" class="wrapper_main">
-                <div class = "content"><%=user.user_posts%></div>
-                <div class = "content"> <%= user.user_comments%></div>
+            <div id = "posts_and_comments" class="wrapper_main2">
+                <div class = "content" id = "content1"><h4>My posts</h4><%=user.user_posts%></div>
+                <div class = "content"> <h4>My comments</h4><%= user.user_comments%></div>
             </div>
         </div>
     </main>
