@@ -1,29 +1,26 @@
 <head>
     <%- include('head'); %>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/login.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/registration.css">
+
 </head>
 
-<div class="wrapper">
-    <header>
-        <%- include('header'); %>
-    </header>
+<h2 class = "text">Entrance</h2>
 
-    <h2 class = "text">Entrance</h2>
-    <div class = "reg-conteiner">
-        <div class = "reg-log"></div>
-        <p class = "comment_form_field">Login:</p>
-        <input required type="text" name="text" placeholder="Frog" maxlength="10" class="form1">
+<form class = "center" name="comment" action="" method="post">
+    <div class = "reg-container">
+        <p class = "comment_form_field">Login / Name</p>
+        <input required type="text" name="text" placeholder="" maxlength="10" class="form_reg">
     </div>
-    <div class = "reg-pas"></div>
-    <p class = "comment_form_field">Password:</p>
-    <input required type="text" name="text" placeholder="Frog" maxlength="10" class="form1">
-</div>
-<input class="buttonSearch" type="submit" name="submit" value="Enter">
-</div>
-<div class = "log-conteiner-form">
-    <a href="/registration">No profile? -Registration-</a>
-</div>
-<footer>
-    <%- include('footer'); %>
-</footer>
-</div>
+
+    <div class = "reg-container">
+        <p class = "comment_form_field">Password</p>
+        <input required type="text" name="text" placeholder="" maxlength="10" class="form_reg">
+
+    </div>
+    <input class="buttonSearch" id = "button_reg" type="submit" name="submit" value="Confirm">
+
+    <div class = "log-conteiner-form">
+        <a href="/registration">I don't have profile</a>
+    </div>
+
+</form>
