@@ -56,12 +56,6 @@ router.get("/article/:index_page", (req, res) => {
     });
 })
 
-router.get('/test', (req, res) => {
-  res.render('error', {
-      Nickname : "denis"
-  })
-})
-
 router.get('/registration', (req, res) => {
     res.render('registration');
 })
