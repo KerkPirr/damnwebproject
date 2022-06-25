@@ -21,7 +21,7 @@
                 <div class="data">
                     <img class="ava" src="" alt="">
                     <span class="username"><%= comments[i].author %></span>
-                    <span class="post-time"><%= comments[i].cmnt_date %></span>
+                    <span class="post-time"><%= comments[i].cmnt_date.toLocaleDateString('en-GB').replaceAll('/','.') %></span>
                 </div>
                 <div class="text">
                     <%= comments[i].cmnt_txt %>
