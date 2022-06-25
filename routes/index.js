@@ -28,25 +28,34 @@ router.get('/',(req,res)=>{
     })
 })
 
-router.get("/article/:index_page", async (req, res) => {
+router.get("/article/:index_page", (req, res) => {
     var index_page = req.params.index_page;
-    if (isNaN(index_page)) {
-        res.sendFile(__dirname + "\\404.html");
+    if (isNaN(index_page)){
+        res.sendFile( __dirname +"\\404.html");
         return
     }
-    let post = await getPost(index_page);
-    if (isEmptyObject(post)) {
-        console.log("Not found page in table " + index_page + " " + post);
-        res.sendFile(__dirname + "\\404.html");
-        return;
-    }
-    let comments = await getComments(index_page);
-    console.log(comments)
-    res.render('article', {
-        posts: post,
-        comments: comments,
+
+    getPost(index_page).then(async (p) => {
+
+        if (isEmptyObject(p)){
+            console.log("Not found page in table " + index_page + " " + p);
+            res.sendFile( __dirname +"\\404.html");
+            return;
+        }
+
+        let comments = [];
+        const comment = await getComments(index_page).then((result) =>{
+            return result;
+        })
+        comments.push(comment);
+
+        res.render('article', {
+            posts:p,
+            comments: comments,
+        });
     });
 })
+
 router.get('/registration', (req, res) => {
     res.render('registration');
 })
@@ -55,13 +64,11 @@ router.get('/login', (req, res) => {
     res.render('login');
 })
 
-router.get('/profile', async (req, res) => {
+router.get('/profile', (req, res) => {
     let login = req.cookies['login'];
-    let user = await getUser(login);
     if (login !== undefined){
         res.render('profile', {
-            Nickname: login,
-            user : user,
+            Nickname: login
         })
     } else {
         res.redirect("/login");

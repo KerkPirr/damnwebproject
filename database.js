@@ -83,6 +83,14 @@ const addLogin = async (login, password) => {
     }
 }
 
+const searchPostByText = async (text) => {
+    const query = `select * from posts where post_content like '%` + text + `%'`;
+    let result = await client.query(query).then(res =>{
+        return res.rows;
+    })
+    return result;
+}
+
 // const getTag = async (tag)=>{
 //     const querry =
 

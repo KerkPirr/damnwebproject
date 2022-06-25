@@ -1,35 +1,23 @@
 <head>
     <%- include('head'); %>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/homepage.css">
+
+    <link rel="stylesheet" type="text/css" href="../stylesheets/section.css">
 
 </head>
 
 <body>
 <div class="wrapper">
+
     <header>
         <%- include('header'); %>
     </header>
-    <h2>Sections</h2>
-    <div class = "categories">
-        <form class = "categories_filters_form">
-            <input id = "cat1" type="checkbox">
-            <label for="cat1">First categories</label>
-        </form>
-        <form class = "categories_filters_form">
-            <input id = "cat2" type="checkbox">
-            <label for="cat2">Second categories</label>
-        </form>
-        <form class = "categories_filters_form">
-            <input id = "cat2" type="checkbox">
-            <label for="cat2">Third categories</label>
-        </form >
-        <form class = "categories_filters_form">
-            <input id = "cat3" type="checkbox">
-            <label for="cat3">Fours categories</label>
-        </form>
+<div class = "main_section">
+    <div class = "posts">
+        <h2>Posts</h2>
     </div>
 
     <div class="filters">
+        <h2 class = "filters1">Filters</h2>
         <form class = "categories_filters_form">
             <input id = "teg1" type="checkbox">
             <label for="teg1">First categories</label>
@@ -47,11 +35,11 @@
             <label for="teg4">Fours categories</label>
         </form>
     </div>
-
+</div>
     <form class = "section" name="comment" action="" method="post">
     <input class="section_search" id = "button_reg" type="submit" name="submit" value="Confirm">
     </form>
-
+</div>
     <footer>
         <%- include('footer'); %>
     </footer>
