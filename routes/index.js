@@ -25,10 +25,6 @@ router.get('/',async (req,res)=>{
     if(queryObject.text){
         text = queryObject.text;
         let posts = await getPostsByText(text);
-        if (isEmptyObject(posts)) {
-            res.sendFile(__dirname + "\\404.html");
-            return;
-        }
         res.render('homepage', {
             posts: posts
         })
