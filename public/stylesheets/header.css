@@ -32,12 +32,13 @@ header {
   padding: 5px 10px;
   display: inline-block;
   width: 100px;
+  color: #d7d7d7;
 }
 
 
 .menu_cell {
   display: flex;
-  color: #afafaf;
+  color: #d7d7d7;
   transition:all 0.1s linear 0s;
 
 }
