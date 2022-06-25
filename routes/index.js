@@ -66,7 +66,7 @@ router.get('/login', (req, res) => {
 
 router.get('/profile', (req, res) => {
     let login = req.cookies['login'];
-    if (login !== undefined){
+    if (login === undefined){
         res.render('profile', {
             Nickname: login
         })
