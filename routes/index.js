@@ -2,7 +2,6 @@ var express = require('express');
 const Console = require("console");
 var router = express.Router();
 
-
 const {client, getPost, getComments, getPosts, addComment , checkLogin, addLogin, getUser} = require("../database");
 
 function isEmptyObject(obj) {
@@ -100,7 +99,21 @@ router.post('/registration', async(req, res) => {
 })
 
 router.get('/sections', (req, res) => {
-    res.render('section');
+    getPosts().then( async (p) => {
+        if (isEmptyObject(p)){
+            console.log("Not found page in table " + index_page + " " + p);
+            res.sendFile( __dirname +"\\404.html");
+            return;
+        }
+        res.render('section', {
+            posts:p,
+        });
+    })
+})
+
+router.post('/', (req, res) =>{
+    let text = req.body['text'];
+    let a = 10;
 })
 
 
