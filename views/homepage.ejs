@@ -6,17 +6,17 @@
 <header>
     <%- include('header'); %>
 </header>
-<div class ="wrapper">
+<div id="wrapper">
     <% for (let i = 0; i < posts.length; i += 1) { %>
-        <div class = "home-posts">
+        <div class="container">
             <div class="article">
-                <h2 class="article-header">Post Name:<%= posts[i].post_name %></h2>
-                <div class="article-autor">Nickname<%= posts[i].post_author %></div>
-                <li class="article-post-time">0000.00.00 00:00<%= posts[i].publication_date %></li>
-                <p class="article-text">...POST TEXT...<%= posts[i].post_content %></p>
-                <div class="all-posts">
+                <h2 class="article-header"><%= posts[i].post_name %></h2>
+                <div class="article-autor"><%= posts[i].post_author %></div>
+                <li class="article-post-time"><%= posts[i].publication_date %></li>
+                <p class="article-text"><%= posts[i].post_content %></p>
+                <div class="tags">
                     <% for (var j = 0; j < post[i].post_tags.length;j += 1) { %>
-                    <p class="all-article-tag"><%= posts[i].post_tags[j] %>
+                    <p class="article-tag"><%= posts[i].post_tags[j] %>
                         <% } %>
                 </div>
             </div>

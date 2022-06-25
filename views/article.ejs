@@ -7,13 +7,13 @@
 </header>
 <div id="wrapper">
     <div class="article">
-        <h2 class="article-header"><%= posts.article %></h2>
-        <div class="article-autor"><%= posts.autor %></div>
-        <li class="article-post-time"><%= posts.date %></li>
-        <p class="article-text"><%= posts.disc %></p>
+        <h2 class="article-header"><%= post.article_header %></h2>
+        <div class="article-autor"><%= post.autor %></div>
+        <li class="article-post-time"><%= post.date %></li>
+        <p class="article-text"><%= post.disc %></p>
     </div>
     <div class="comments">
-        <% for(let i = 0; i < Math.min(4, 3); i += 1){ %>
+        <% for(var i = 0; i < comments.length; i += 1){ %>
             <div class="comment">
                 <div class="data">
                     <img class="ava" src="/public/images/аватарки/ava1.jfif" alt="">
