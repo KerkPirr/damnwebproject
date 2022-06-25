@@ -65,10 +65,16 @@ const checkLogin = async (login, password) => {
 }
 
 const addLogin = async (login, password) => {
+
     if (checkLogin(login, password)){
         return false;
     } else {
-        const query = `insert into users (login, password, reg_date) values ('Вася', '123456', '2022-01-01')`
+        
+        login = "'" + login + "'";
+        password = "'" + password + "'";
+        let date = new Date();
+
+        const query = `insert into users (login, password, reg_date) values (login, password, date)`
     }
 }
 
