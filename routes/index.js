@@ -40,8 +40,12 @@ router.get('/profile', (req, res) => {
             Nickname: login
         })
     } else {
-        res.render('registration')
+        document.location.href = "registration";
     }
+})
+
+router.get('/registartion', (req, res) => {
+    res.render('registration');
 })
 
 router.get('/login', (req, res) => {
