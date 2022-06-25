@@ -33,7 +33,7 @@ h3 {
 }
 
 .content {
-    background:linear-gradient(to right, #1e2229, #323945);
+    background:linear-gradient(45deg, #141E30,#243B55);
     height: 375px;
     width: 290px;
     color: #d7d7d7;
@@ -67,7 +67,7 @@ h3 {
     border: 2px solid #102034;
     width: 250px;
     height: 25px;
-    background:linear-gradient(to right, #1e2229, #323945);
+    background:linear-gradient(45deg, #141E30,#243B55);
     text-align: center;
 
 }
