@@ -15,6 +15,12 @@
         </div>
         <p class="article-text"><%= posts.post_content %></p>
     </div>
+    <form class = "comment_form">
+        <h2>Live the comment</h2>
+        <textarea name="text" cols="70" rows="15" style="resize: none;" class = "input_comment_field"> </textarea> <br>
+
+        <input required type="submit" name="submit" value="Confirm" class="buttonSearch">
+    </form>
     <div class="comments">
         <% for(var i = 0; i < comments.length; i += 1){ %>
             <div class="comment">
@@ -28,7 +34,9 @@
             </div>
         <% } %>
     </div>
+
 </div>
+
 <footer>
     <%- include('footer'); %>
 </footer>
