@@ -57,9 +57,12 @@ router.get("/article/:index_page", async (req, res) => {
     });
 })
 router.post("/article/:index_page", (req,res)=>{
-    let comment = req.body;
+    let user = req.cookies['login'];
     let date = new Date();
-    addComment(req.body['login'],date, req.params.index_page, comment);
+    let comment = req.body['comment-text'];
+    let post = req.params.index_page;
+
+    addComment(user, post, comment, date);
 
 })
 
