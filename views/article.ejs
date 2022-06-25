@@ -19,7 +19,6 @@
         <% for(var i = 0; i < comments.length; i += 1){ %>
             <div class="comment">
                 <div class="data">
-                    <img class="ava" src="<%=pictures[i]%>" alt="">
                     <span class="username"><%= comments[i].author %></span>
                     <span class="post-time"><%= comments[i].cmnt_date.toLocaleDateString('en-GB').replaceAll('/','.') %></span>
                 </div>
