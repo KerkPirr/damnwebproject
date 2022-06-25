@@ -1,10 +1,15 @@
+body{
+    background: linear-gradient(45deg, #000428, #004e92);
+}
+
+
 .wrapper {
     width: min(900px, 100%);
     margin: 0 auto;
     padding: 0 10px;
 }
 
-h3 {
+h2 {
     color: #39a2e9;
     font-family: Chakra_Bold;
     margin-left: 10px;
@@ -34,7 +39,7 @@ h3 {
     color: #d7d7d7;
     font-family: Chakra_Bold;
     margin-left: 10px;
-    margin-top: 5px;
+    margin-top: 15px;
     text-decoration: none;
     font-size: 20px;
 }
@@ -43,12 +48,17 @@ h3 {
     color: #d7d7d7;
 }
 
+hr {
+    color : #afafaf;
+}
+
 .article-autor {
     color : #39a2e9;
     font-family: Chakra_Bold;
     font-size: 15px;
     margin-left: 10px;
     margin-top: 5px;
+    text-decoration: none;
 }
 
 .article-post-time {
@@ -57,6 +67,8 @@ h3 {
     font-size: 15px;
     margin-left: 10px;
     margin-top: 5px;
+    text-decoration: none;
+    list-style-type: none;
 }
 
 .article-text {
@@ -66,3 +78,50 @@ h3 {
     margin-left: 10px;
     margin-top: 5px;
 }
+
+.input_comment_field {
+    font-family: Chakra_Bold;
+    padding: 2px;
+    font-size: 13px;
+    border: 1px solid #2f5379;
+    width: 600px;
+    height: 100px;
+    background: #316282;
+    color : aliceblue;
+    transition:all 0.1s linear 0s;
+}
+
+.input_comment_field:hover {
+    border: 1px solid #39a2e9;
+}
+
+.username {
+    color: #39a2e9;
+    font-family: Chakra_Bold;
+    font-size: 15px;
+}
+
+.post-time {
+    color: #afafaf;
+    font-family: Chakra_Bold;
+    font-size: 10px;
+}
+
+.text {
+    color: #afafaf;
+    font-family: Chakra_Bold;
+    font-size: 12px;
+}
+
+.comment {
+    background:linear-gradient(45deg, #141E30,#243B55);
+    margin: 20px 10px 10px 10px;
+
+    width: min(900px, 100%);
+    height: 80px;
+    border-radius: 5px;
+    border: 2px solid #102034;
+
+}
+
+
