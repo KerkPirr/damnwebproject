@@ -1,4 +1,4 @@
-const {Client} = require('pg');
+const { Client } = require('pg');
 
 const client = new Client({
     user: 'postgres',
@@ -11,7 +11,7 @@ const client = new Client({
 client.connect();
 
 
-const getPosts = async () => {
+const getPosts = async () =>{
     const query = 'SELECT * FROM posts';
     let result = await client.query(query).then(res => {
         return res.rows;
@@ -21,20 +21,28 @@ const getPosts = async () => {
 
 const getPost = async (id) => {
     const query = 'SELECT * FROM posts WHERE post_id = ' + id;
-    let result = await client.query(query).then(res => {
+    let result = await client.query(query).then(res =>{
         var k = res.rows[0];
         return k;
     })
     return result;
 }
 
-const getComments = async (post_id) => {
+const getComments = async (post_id) =>{
     const query = 'SELECT * FROM comments WHERE post_id = ' + post_id;
-    let result = await client.query(query).then(res => {
+    let result = await client.query(query).then(res =>{
         return res.rows;
     })
     return result;
 }
+// const getPicture = async () => {
+//     const query = `SELECT user_picture, login FROM users WHERE user_comments @> '{${post_id}}'`;
+//     let result = await client.query(query).then(res =>{
+//         return res.rows;
+//     })
+//     return result;
+// }
+
 
 function addComment(post, comment) {
     const query = `INSERT INTO comments ("author", "cmnt_date", "cmnt_txt", "post_id") ` +
