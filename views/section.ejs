@@ -12,6 +12,31 @@
         <%- include('header'); %>
     </header>
 <div class = "main_section">
+    <div class="filters">
+        <h2 class = "filters1">Filters</h2>
+        <form class = "categories_filters_form">
+            <input id = "teg1" class="teg_all" type="radio">
+            <label for="teg1">First categories</label>
+        </form>
+        <form class = "categories_filters_form">
+            <input id = "teg2" type="radio" class="teg_all">
+            <label for="teg2">Second categories</label>
+        </form>
+        <form class = "categories_filters_form">
+            <input id = "teg3" type="radio" class="teg_all">
+            <label for="teg3">Third categories</label>
+        </form >
+        <form class = "categories_filters_form">
+            <input id = "teg4" type="radio" class="teg_all">
+            <label for="teg4">Fours categories</label>
+        </form>
+    </div>
+
+    <form class = "section" name="comment" action="" method="post">
+        <input class="section_search" id = "button_reg" type="submit" name="submit" value="Confirm">
+    </form>
+
+
     <div class = "posts">
         <h2>Posts</h2>
         <% for (var i = 0; i < posts.length; i += 1) { %>
@@ -29,33 +54,12 @@
         <% } %>
     </div>
 
-    <div class="filters">
-        <h2 class = "filters1">Filters</h2>
-        <form class = "categories_filters_form">
-            <input id = "teg1" type="checkbox">
-            <label for="teg1">First categories</label>
-        </form>
-        <form class = "categories_filters_form">
-            <input id = "teg2" type="checkbox">
-            <label for="teg1">Second categories</label>
-        </form>
-        <form class = "categories_filters_form">
-            <input id = "teg3" type="checkbox">
-            <label for="teg3">Third categories</label>
-        </form >
-        <form class = "categories_filters_form">
-            <input id = "teg4" type="checkbox">
-            <label for="teg4">Fours categories</label>
-        </form>
-    </div>
-</div>
-    <form class = "section" name="comment" action="" method="post">
-    <input class="section_search" id = "button_reg" type="submit" name="submit" value="Confirm">
-    </form>
-</div>
+
+
     <footer>
         <%- include('footer'); %>
     </footer>
+</div>
 </div>
 </body>
 
