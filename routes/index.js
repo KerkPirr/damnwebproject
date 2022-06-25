@@ -56,6 +56,12 @@ router.get("/article/:index_page", (req, res) => {
     });
 })
 
+router.get('/test', (req, res) => {
+  res.render('error', {
+      Nickname : "denis"
+  })
+})
+
 router.get('/registration', (req, res) => {
     res.render('registration');
 })
@@ -66,7 +72,7 @@ router.get('/login', (req, res) => {
 
 router.get('/profile', (req, res) => {
     let login = req.cookies['login'];
-    if (login === undefined){
+    if (login !== undefined){
         res.render('profile', {
             Nickname: login
         })

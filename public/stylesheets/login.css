@@ -4,12 +4,6 @@ body {
     animation: gradient 10s ease infinite;
 }
 
-.wrapper {
-    width: min(900px, 100%);
-    margin: 0 auto;
-    padding: 0 10px;
-}
-
 @keyframes gradient {
 
     0% {

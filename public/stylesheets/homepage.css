@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(to right, #183648, #1b2d43);
+    background: linear-gradient(45deg, #000428, #004e92);
 }
 
 .wrapper {
@@ -20,10 +20,10 @@ h2 {
     object-fit: cover;
 }
 .article {
-    background:linear-gradient(to right, #1e2229, #323945);
+    background:linear-gradient(45deg, #141E30,#243B55);
     border: 2px solid #102034;
-    margin: 10px auto auto 10px;
-    width: 95%;
+    margin: 10px 0 10px 0;
+    width: 100%;
 
 }
 
