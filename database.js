@@ -10,6 +10,15 @@ const client = new Client({
 
 client.connect();
 
+
+const getPosts = async () =>{
+    const query = 'SELECT * FROM posts';
+    let result = await client.query(query).then(res => {
+        return res.rows;
+    });
+    return result;
+}
+
 const getPost = async (id) => {
     const query = 'SELECT * FROM posts WHERE post_id = ' + id;
     let result = await client.query(query).then(res =>{
@@ -28,20 +37,11 @@ const getComments = async (post_id) =>{
 }
 
 
-const getPosts = async () =>{
-    const query = 'SELECT * FROM posts';
-    let result = await client.query(query).then(res => {
-        return res.rows;
-    });
-    return result;
-}
 
 
 function addComment(post, comment){
-
     const query = `INSERT INTO comments ("author", "cmnt_date", "cmnt_txt", "post_id") ` +
         `VALUES ('` + comment.author + `','` + comment.date + `','` + `','` + comment.comment_text + `',` + post + `)`;
-
     client.query(query, (err, res) => {
         if (err) {
             console.error(err);
