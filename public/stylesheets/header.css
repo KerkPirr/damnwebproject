@@ -1,5 +1,6 @@
 .wrapper {
   width: min(900px, 100%);
+
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -57,7 +58,7 @@ header {
 }
 
 .search_and_buttonSearch {
-  margin-left: 180px;
+margin-left: 145px;
 
 }
 
@@ -94,6 +95,12 @@ header {
   color: aliceblue;
 }
 
+#button_profile {
+  height: 25px;
+  width: 25px;
+ margin-left: 8px;
+
+}
 .mainName {
   color : #d7d7d7;
   font-family: Anonym_Bold;
