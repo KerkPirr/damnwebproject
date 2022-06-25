@@ -17,9 +17,7 @@
                 <div class="article-autor"><%= posts[i].post_author %></div>
                 <li class="article-post-time"><%= posts[i].pub_date.toLocaleDateString('en-GB').replaceAll('/','.') %></li>
                 <div class = "img_comment">
-                <% if (posts[i].post_pict !== undefined){ %>
-                    <img src="<%= posts[i].post_pict %>">
-                <% } %>
+                <img src="<%= posts[i].post_pict%>" alt="Здесь должна была быть картинка">
                 </div>
                 <p class="article-text"><%= posts[i].post_content %></p>
             </div>
