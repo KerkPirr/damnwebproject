@@ -17,11 +17,11 @@
             <div class="article">
                 <h3 class="article-header"><%= posts[i].post_name %></h3>
                 <div class="article-autor"><%= posts[i].post_author %></div>
-                <li class="article-post-time"><%= posts[i].pub_date.toLocaleDateString('en-GB').replaceAll('/','.') %></li>
-                <div class = "img_comment">
-                <img src="<%= posts[i].post_pict%>" alt="Здесь должна была быть картинка">
-                </div>
+                <div class="article-post-time"><%= posts[i].pub_date.toLocaleDateString('en-GB').replaceAll('/','.') %></div>
                 <p class="article-text"><%= posts[i].post_content %></p>
+            </div>
+            <div class = "img_comment">
+                <img src="<%= posts[i].post_pict%>" alt="Здесь должна была быть картинка">
             </div>
         </div>
     <% } %>
