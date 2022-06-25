@@ -1,3 +1,27 @@
 body {
     background: linear-gradient(45deg, #000428, #004e92);
 }
+
+.wrapper {
+    width: min(900px, 100%);
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+
+h2 {
+    font-family: Chakra_Bold;
+    color: #39a2e9;
+    display: inline-block;
+    margin-top: 30px;
+}
+
+.posts {
+    display: inline;
+    width: 100px;
+}
+
+.filters {
+    display: inline;
+    width: 100px;
+}
