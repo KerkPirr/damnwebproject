@@ -65,20 +65,25 @@ const checkLogin = async (login, password) => {
 }
 
 const addLogin = async (login, password) => {
-
     if (checkLogin(login, password)){
         return false;
     } else {
-        
         login = "'" + login + "'";
         password = "'" + password + "'";
         let date = new Date();
 
-        const query = `insert into users (login, password, reg_date) values (login, password, date)`
+        const query = `insert into users (login, password, reg_date) values (login, password, date)`;
+        await client.query(query, (err, res) => {
+            if (err) {
+                console.error(err);
+                return false;
+            }
+        });
+        return true;
     }
 }
 
 // const getTag = async (tag)=>{
 //     const querry =
 
-module.exports = {client, getPost, getComments, getPosts, addComment, checkLogin}
+module.exports = {client, getPost, getComments, getPosts, addComment, checkLogin, addLogin}
