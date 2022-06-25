@@ -2,7 +2,15 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/',(req,res)=>{
-  res.render('HomePage')
+  res.render('homepage', {
+    posts: {}
+  })
 })
-re
+
+router.get('/test', (req, res) => {
+  res.render('article', {
+      posts: {}
+  })
+})
+
 module.exports = router;
