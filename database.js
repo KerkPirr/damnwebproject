@@ -1,4 +1,5 @@
 const { Client } = require('pg');
+let format = require('pg-format');
 
 const client = new Client({
     user: 'postgres',
@@ -65,15 +66,13 @@ const checkLogin = async (login, password) => {
 }
 
 const addLogin = async (login, password) => {
-    if (checkLogin(login, password)){
+    if (await checkLogin(login, password)){
         return false;
     } else {
-        login = "'" + login + "'";
-        password = "'" + password + "'";
+        //TODO сделать проверку на корректность пароля и логина
         let date = new Date();
-
-        const query = `insert into users (login, password, reg_date) values (login, password, date)`;
-        await client.query(query, (err, res) => {
+        let values = [[login, password, date]];
+        await client.query(format('INSERT INTO users (login, password, reg_date) VALUES %L', values),[], (err, res) => {
             if (err) {
                 console.error(err);
                 return false;
