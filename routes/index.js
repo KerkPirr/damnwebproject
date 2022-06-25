@@ -33,4 +33,15 @@ router.get('/test', (req, res) => {
   })
 })
 
+router.get('/profile', (req, res) => {
+    let login = req.cookies['login'];
+    if (login !== undefined){
+        res.render('profile', {
+            Nickname: login
+        })
+    } else {
+        res.render('registration')
+    }
+})
+
 module.exports = router;
