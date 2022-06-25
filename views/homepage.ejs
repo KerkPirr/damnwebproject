@@ -14,11 +14,7 @@
                 <div class="article-autor"><%= posts[i].post_author %></div>
                 <li class="article-post-time"><%= posts[i].publication_date %></li>
                 <p class="article-text"><%= posts[i].post_content %></p>
-                <div class="tags">
-                    <% for (var j = 0; j < post[i].post_tags.length;j += 1) { %>
-                    <p class="article-tag"><%= posts[i].post_tags[j] %>
-                        <% } %>
-                </div>
+
             </div>
         </div>
     <% } %>

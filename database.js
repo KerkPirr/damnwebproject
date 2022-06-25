@@ -11,7 +11,7 @@ const client = new Client({
 client.connect();
 
 const getPost = async (id) => {
-    const query = 'SELECT * FROM Posts WHERE PostId = ' + id;
+    const query = 'SELECT * FROM posts WHERE post_id = ' + id;
     let result = await client.query(query).then(res =>{
         var k = res.rows[0];
         return k;
@@ -19,8 +19,8 @@ const getPost = async (id) => {
     return result;
 }
 
-const getComments = async (postId) =>{
-    const query = 'SELECT * FROM Comments WHERE "PostId" = ' + postId;
+const getComments = async (post_id) =>{
+    const query = 'SELECT * FROM comments WHERE post_id = ' + post_id;
     let result = await client.query(query).then(res =>{
         return res.rows;
     })
@@ -28,27 +28,19 @@ const getComments = async (postId) =>{
 }
 
 
-const getPosts = async (left, right) =>{
-    const query = 'SELECT * FROM Posts WHERE post_id >= ' + left + ' AND post_id <= ' + right;
+const getPosts = async () =>{
+    const query = 'SELECT * FROM posts';
     let result = await client.query(query).then(res => {
         return res.rows;
     });
     return result;
 }
 
-const countPosts = async () =>{
-    const query = 'SELECT COUNT(*) FROM Posts';
-    let result = await client.query(query).then(res =>{
-        return res;
-    })
-    console.log(result.rows[0].count - 1);
-    return Number(result.rows[0].count) - 1;
-}
 
 function addComment(post, comment){
 
-    const query = `INSERT INTO comments ("Name", "mail", "sait", "Text", "PostId") ` +
-        `VALUES ('` + comment.UserName + `','` + comment.Mail + `','` + comment.URL + `','` + comment.Comment_text + `',` + post + `)`;
+    const query = `INSERT INTO comments ("author", "cmnt_date", "cmnt_txt", "post_id") ` +
+        `VALUES ('` + comment.author + `','` + comment.date + `','` + `','` + comment.comment_text + `',` + post + `)`;
 
     client.query(query, (err, res) => {
         if (err) {
@@ -59,4 +51,4 @@ function addComment(post, comment){
     });
 }
 
-module.exports = { client, getPost, getComments, getPosts, countPosts, addComment}
+module.exports = { client, getPost, getComments, getPosts, addComment}
