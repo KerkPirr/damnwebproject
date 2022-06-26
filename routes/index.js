@@ -3,7 +3,7 @@ const Console = require("console");
 var router = express.Router();
 const url = require('url');
 
-const {client, getPost, getComments, getPosts, addComment , checkLogin, addLogin, getUser, getPostsByText, getPostsByUser, getCommentsByUser} = require("../database");
+const {client, getPost, getComments, getPosts, addComment , checkLogin, addLogin, getUser, getPostsByText, getPostsByUser, getCommentsByUser, addPost} = require("../database");
 
 function isEmptyObject(obj) {
     for (var i in obj) {
@@ -67,7 +67,7 @@ router.post("/article/:index_page", async (req,res)=>{
     let post_id = req.params.index_page;
     let date = new Date();
 
-    let flag = addComment(user, date, comment, post_id, false);
+    let flag = await addComment(user, date, comment, post_id, false);
     let post = await getPost(post_id);
     let comments = await getComments(post_id);
     console.log(comments)
@@ -76,6 +76,19 @@ router.post("/article/:index_page", async (req,res)=>{
         comments: comments,
     })
 
+})
+router.get('/new_post',(req,res)=>{
+    res.render('create-post');
+})
+router.post("/new_post",async (req,res)=>{
+    let post_name = req.body['title'];
+    let pub_date = new Date();
+    let post_author = req.cookies['login'];
+    let post_content = req.body['main'];
+
+    let flag = await addPost(post_name,pub_date,post_author,post_content,false);
+    let posts = await getPosts();
+    res.redirect('/');
 })
 
 router.get('/registration', (req, res) => {

@@ -40,6 +40,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
 function isEmptyObject(obj) {
   for (var i in obj) {
     if (obj.hasOwnProperty(i)) {

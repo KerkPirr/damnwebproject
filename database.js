@@ -79,6 +79,17 @@ const addComment = async (user, date, comment, post) => {
     });
 }
 
+const addPost = async (post_name, pub_date, post_author, post_content) => {
+    let values = [[post_name, pub_date,post_author, post_content]];
+    await client.query(format('INSERT INTO posts (post_name, pub_date, post_author, post_content) VALUES %L', values), [], (err, res) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        console.log('Data insert successful');
+    });
+}
+
 const checkLogin = async (login, password, flag) => {
     let asdf = ``;
     if (flag){
@@ -106,4 +117,4 @@ const addLogin = async (login, password) => {
         return true;
     }
 }
-module.exports = {client, getPost, getComments, getPosts, addComment, checkLogin, addLogin,getUser, getPostsByText, getPostsByUser,getCommentsByUser}
+module.exports = {client, getPost, getComments, getPosts, addComment, checkLogin, addLogin,getUser, getPostsByText, getPostsByUser,getCommentsByUser,addPost}
