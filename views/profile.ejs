@@ -28,8 +28,14 @@
                 <form class = "container_button_search"  name="comment" action="" method="post">
                     <input class="buttonSearch_profile" type="submit" name="submit" value="Change Nickname">
                     <input class="buttonSearch_profile" type="submit" name="submit" value="Change Avatar">
-                    <input class="buttonSearch_profile" id = "create_posts" type="submit" name="submit" value="Create Post">
+                    <input class="buttonSearch_profile" id = "create_posts" type="button" name="submit" value="Create Post">
                 </form>
+                <script>
+                    let button1 = document.getElementById("create_posts");
+                    button1.addEventListener('click', () => {
+                        document.location.href = "/new_post";
+                    });
+                </script>
             </div>
 
             <div id = "posts_and_comments" class="wrapper_main2">
