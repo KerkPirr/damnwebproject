@@ -15,8 +15,8 @@ h2 {
 }
 
 .img_comment img {
-    width: 300px;
-    height: 350px;
+    width: 200px;
+    height: 250px;
     border: 2px solid #081B55;
     object-fit: cover;
     margin: 10px 10px 10px 10px;
